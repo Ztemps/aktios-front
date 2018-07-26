@@ -5,9 +5,15 @@ import { FilterPerson } from '../../../app/pipes/filter-person';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
-    declarations: [StaffTableComponent, FilterPerson],
-    exports: [StaffTableComponent],
-    providers: []
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  declarations: [
+    StaffTableComponent,
+    FilterPerson
+  ],
+  exports: [StaffTableComponent],
+  providers: []
 })
-export class StaffTableModule { }
+export class StaffTableModule {}
