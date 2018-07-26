@@ -1,6 +1,8 @@
+import { FilterPerson } from './../../../app/pipes/filter-person';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StaffTableComponent } from './staff-table.component';
+import { FormsModule } from '../../../../node_modules/@angular/forms';
 
 describe('StaffTableComponent', () => {
   let component: StaffTableComponent;
@@ -8,7 +10,8 @@ describe('StaffTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StaffTableComponent ]
+      imports: [FormsModule],
+      declarations: [ StaffTableComponent, FilterPerson ]
     })
     .compileComponents();
   }));
