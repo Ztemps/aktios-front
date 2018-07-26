@@ -1,0 +1,44 @@
+<div class="row pagination" *ngIf="searched">
+  <div class="col-md-12">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Paginación</label>
+          </div>
+          <select [(ngModel)]="pagValue" name="company">
+          <option *ngFor="let pag of pagination;"
+                  [value]="pag.value">{{ pag.value }}</option>
+        </select>
+        </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table" *ngIf="searched">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre Completo</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">País</th>
+                <th scope="col">Última modificación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let person of tableResults | filterPerson:filter | slice:0:pagValue;">
+                <th scope="row">{{ person?.surname +' '+ person?.surname2 +', '+  person?.name}}</th>
+                <td>{{ person?.datebirthday | date:'yyyy-MM-dd' }}</td>
+                <td>{{ person?.phone }}</td>
+                <td>{{ person?.sex }}</td>
+                <td>{{ person?.country }}</td>
+                <td>{{ person?.lastModification | date:'yyyy-MM-dd HH:m'}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="alert alert-info" role="alert" *ngIf="!searched">
+   Hola! Escriba lo que quiera encontrar en el buscador que está justo encima.
+  </div>
+

@@ -1,0 +1,19 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Nombre, apellido, etc..." aria-label="Nombre, apellido, etc..." aria-describedby="button-addon2" #input>
+  <div class="input-group-append">
+    <button
+    class="btn btn-outline-secondary"
+    type="button"
+    (click)="searchPerson(input.value)"
+    id="button-addon2">Buscar</button>
+  </div>
+</div>
+<div class="row">
+  <dir class="col-md-12">
+    <app-staff-table
+    [totalResults]=totalResults
+    [queryFilter]="searchValue"
+    [searched]="searched"
+    ></app-staff-table>
+  </dir>
+</div>
