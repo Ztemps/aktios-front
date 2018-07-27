@@ -41,7 +41,7 @@ Creí que la mejor forma de afrontar este reto era, cargando todos los datos (qu
 
 ### Staff Table
 
-Este componente se encarga de mostrar todos los datos por pantalla al usuario, en el cual desde el padre sele inyectan tres campos
+Este componente se encarga de mostrar todos los datos por pantalla al usuario, en el cual desde el padre se le inyectan tres campos
 @Input() totalResults: Person;
 @Input() queryFilter: string;
 @Input() searched: string;
